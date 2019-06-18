@@ -49,13 +49,13 @@ You can integrate with goSell by:
 - Install goSell React Component on NPM for who uses React JS. by running the following command in the terminal:
 
 ```
-npm i @tap-payments/goSell
+npm i @tap-payments/gosell
 ```
 
 import the library inside your code:
 
 ```
-import { GoSell } from "@tap-payments/goSell";
+import { GoSell } from "@tap-payments/gosell";
 ```
 
 #### goSell Usage
@@ -311,7 +311,7 @@ Transaction mode of the example: 'charge'
 
 ```
 import React, { Component }  from "react";
-import { GoSell } from "@tap-payments/goSell";
+import { GoSell } from "@tap-payments/gosell";
 
 class GoSellDemo extends Component {
 
@@ -572,7 +572,7 @@ Used to generate card token.
 
 ```
 import React, { Component }  from "react";
-import { GoSellElements } from "@tap-payments/goSell";
+import { GoSellElements } from "@tap-payments/gosell";
 
 class GoSellElementsDemo extends Component {
 
