@@ -40,7 +40,7 @@ You can integrate with goSell by:
 - JavaScript Library, which allows front end developers to setup the payment gateway on their stores easily by adding a very basic snippet of JavaScript using the following script tag:
 
 ```
-<script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.3/js/gosell.js"></script>
+<script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.4/js/gosell.js"></script>
 ```
 ** Take care, the configurations structure has been changed in this version **
 >  Use the JavaScript Library in server side environment, otherwise the credit card section will not work.
@@ -81,6 +81,7 @@ It's a required field for the JS library. It includes the general settings of th
 | saveCardOption | boolean  | **optional**  | true | Enable or disable the saving card option on the credit/debit cards section in goSell payment gateway, if saving cards feature is enabled in your goSell account. |
 | customerCards | boolean  | **optional**  | true | Allow/Disallow your customers to pay by their saved cards on goSell Gateway. If you enabled this property, your customers will able to see their saved cards and use them security. |
 | notifications | string  | **optional**  | 'standard' | Define your preferences, if you like to use your own component or HTML element to show notifications or use goSell standard notifications bar. |
+| backgroundImg | object  | **optional**  |  | Define a background image for the goSell JS library page. |
 | callback | function  | **optional**  |  | Define an action or a callback after each transaction. When the payment process is being executed, the library will return the transaction result JSON to the callback function.    |
 | labels | object  | **optional**  | {<br>cardNumber:"Card Number",<br>expirationDate:"MM/YY",<br>cvv:"CVV",<br>cardHolder:"Name on Card",<br>actionButton:"Pay"<br>} | Define custom titles for input boxes inside credit/debit cards section. |
 | style | object  | **optional**  | {<br>base: {<br>color: '#535353',<br>lineHeight: '18px',<br>fontFamily: 'sans-serif',<br>fontSmoothing: 'antialiased',<br>fontSize: '16px',<br>'::placeholder': {<br>color: 'rgba(0, 0, 0, 0.26)',<br>fontSize:'15px'<br>}<br>},<br>invalid: {<br>color: 'red',<br>iconColor: '#fa755a '<br>}<br>} | Define custom style for input boxes inside credit/debit cards section. |
@@ -172,11 +173,11 @@ Transaction mode of the example: 'charge'
     <title>goSell Demo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <link rel="shortcut icon" href="https://goSellJSLib.b-cdn.net/v1.3/imgs/tap-favicon.ico" />
-    <link href="https://goSellJSLib.b-cdn.net/v1.3/css/gosell.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="https://goSellJSLib.b-cdn.net/v1.4/imgs/tap-favicon.ico" />
+    <link href="https://goSellJSLib.b-cdn.net/v1.4/css/gosell.css" rel="stylesheet" />
 </head>
 <body>
-    <script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.3/js/gosell.js"></script>
+    <script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.4/js/gosell.js"></script>
 
     <div id="root"></div>
     <button id="openLightBox" onclick="goSell.openLightBox()">open goSell LightBox</button>
@@ -195,6 +196,10 @@ Transaction mode of the example: 'charge'
         saveCardOption:false,
         customerCards: true,
         notifications:'standard',
+        backgroundImg: {
+          url: 'imgURL',
+          opacity: '0.5'
+        },
         labels:{
             cardNumber:"Card Number",
             expirationDate:"MM/YY",
@@ -314,12 +319,12 @@ class GoSellDemo extends Component {
     super(props);
   }
 
+  callbackFunc(response){
+    //console.log(response);
+  }
+
   render() {
-
-    callbackFunc(response){
-      console.log(response);
-    }
-
+    
     return (
       <div className="App">
 
@@ -336,6 +341,10 @@ class GoSellDemo extends Component {
              saveCardOption:true,
              customerCards: true,
              notifications:'standard',
+             backgroundImg: {
+              url: 'imgURL',
+              opacity: '0.5'
+            },
              callback: this.callbackFunc,
              labels:{
                  cardNumber:"Card Number",
@@ -453,7 +462,7 @@ You can integrate with goSellElements by:
 - JavaScript Library, which allows front end developers to setup the payment gateway on their stores easily by adding a very basic snippet of JavaScript using the following script tag:
 
 ```
-<script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.3/js/gosell.js"></script>
+<script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.4/js/gosell.js"></script>
 ```
 
 >  Use the goSellElements in server side environment, otherwise the credit card section will not work.
@@ -509,11 +518,11 @@ Used to generate card token.
       <title>goSell Elements Demo</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-      <link rel="shortcut icon" href="https://goSellJSLib.b-cdn.net/v1.3/imgs/tap-favicon.ico" />
-      <link href="https://goSellJSLib.b-cdn.net/v1.3/css/gosell.css" rel="stylesheet" />
+      <link rel="shortcut icon" href="https://goSellJSLib.b-cdn.net/v1.4/imgs/tap-favicon.ico" />
+      <link href="https://goSellJSLib.b-cdn.net/v1.4/css/gosell.css" rel="stylesheet" />
    </head>
    <body>
-      <script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.3/js/gosell.js"></script>
+      <script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.4/js/gosell.js"></script>
       <div id="root"></div>
       <p id="msg"></p>
       <button id="submit-elements" onclick="goSell.submit()">Submit</button>
@@ -572,7 +581,7 @@ class GoSellElementsDemo extends Component {
   }
 
   callbackFunc(response){
-    console.log(response);
+    //console.log(response);
   }
 
   render() {
