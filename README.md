@@ -173,11 +173,11 @@ Transaction mode of the example: 'charge'
     <title>goSell Demo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <link rel="shortcut icon" href="https://goSellJSLib.b-cdn.net/v1.4/imgs/tap-favicon.ico" />
-    <link href="https://goSellJSLib.b-cdn.net/v1.4/css/gosell.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="https://goSellJSLib.b-cdn.net/v1.4.1/imgs/tap-favicon.ico" />
+    <link href="https://goSellJSLib.b-cdn.net/v1.4.1/css/gosell.css" rel="stylesheet" />
 </head>
 <body>
-    <script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.4/js/gosell.js"></script>
+    <script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.4.1/js/gosell.js"></script>
 
     <div id="root"></div>
     <button id="openLightBox" onclick="goSell.openLightBox()">open goSell LightBox</button>
@@ -196,6 +196,9 @@ Transaction mode of the example: 'charge'
         saveCardOption:false,
         customerCards: true,
         notifications:'standard',
+        callback:(response) => {
+            console.log('response', response);
+        },
         backgroundImg: {
           url: 'imgURL',
           opacity: '0.5'
@@ -320,7 +323,7 @@ class GoSellDemo extends Component {
   }
 
   callbackFunc(response){
-    //console.log(response);
+    console.log(response);
   }
 
   render() {
@@ -518,11 +521,11 @@ Used to generate card token.
       <title>goSell Elements Demo</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-      <link rel="shortcut icon" href="https://goSellJSLib.b-cdn.net/v1.4/imgs/tap-favicon.ico" />
-      <link href="https://goSellJSLib.b-cdn.net/v1.4/css/gosell.css" rel="stylesheet" />
+      <link rel="shortcut icon" href="https://goSellJSLib.b-cdn.net/v1.4.1/imgs/tap-favicon.ico" />
+      <link href="https://goSellJSLib.b-cdn.net/v1.4.1/css/gosell.css" rel="stylesheet" />
    </head>
    <body>
-      <script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.4/js/gosell.js"></script>
+      <script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.4.1/js/gosell.js"></script>
       <div id="root"></div>
       <p id="msg"></p>
       <button id="submit-elements" onclick="goSell.submit()">Submit</button>
@@ -581,7 +584,7 @@ class GoSellElementsDemo extends Component {
   }
 
   callbackFunc(response){
-    //console.log(response);
+    console.log(response);
   }
 
   render() {
@@ -622,7 +625,7 @@ class GoSellElementsDemo extends Component {
                  }
              }
            }}
-           token={true} />
+            />
 
            <p id="msg"></p>
 
