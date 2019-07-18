@@ -474,13 +474,13 @@ You can integrate with goSellElements by:
 - Install goSell React Component on NPM for who uses React JS. by running the following command in the terminal:
 
 ```
-npm i @tap-payments/goSell
+npm i @tap-payments/gosell
 ```
 
 import the library inside your code:
 
 ```
-import { GoSellElements } from "@tap-payments/goSell";
+import { GoSellElements } from "@tap-payments/gosell";
 ```
 
 #### goSellElements Usage
