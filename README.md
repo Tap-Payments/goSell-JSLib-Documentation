@@ -426,9 +426,9 @@ class GoSellDemo extends Component {
              shipping:null,
              taxes: null
            }}
-           transaction={
+           transaction={{
              mode: 'charge',
-             charge:{
+             charge: {
               saveCard: false,
               threeDSecure: true,
               description: "Test Description",
@@ -444,7 +444,8 @@ class GoSellDemo extends Component {
               },
               redirect: window.location.href,
               post: window.location.href,
-            }}
+            }
+           }}
            />
       </div>
     );
