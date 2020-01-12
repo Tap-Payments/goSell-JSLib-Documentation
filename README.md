@@ -297,8 +297,8 @@ Transaction mode of the example: 'charge'
             email: false,
             sms: true
           },
-          redirect: window.location.href,
-          post: window.location.href,
+          redirect: "REDIRECT_URL",
+          post: null,
         }
      }
     });
@@ -442,8 +442,8 @@ class GoSellDemo extends Component {
                 email: false,
                 sms: true
               },
-              redirect: window.location.href,
-              post: window.location.href,
+              redirect: "REDIRECT_URL",
+              post: null,
             }}
            />
       </div>
