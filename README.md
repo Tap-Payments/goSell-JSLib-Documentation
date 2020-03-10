@@ -137,7 +137,7 @@ Enable charge mode in goSell payment gateway. The charge transactions will be cr
 | metadata | string  | **optional**  |  | Set of key/value pairs that you can attach to an object. It can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to metadata. |
 | receipt | object  | **optional**  | {<br>email: false,<br>sms: true<br>} | Whether receipt email or sms to be send to the payer or not |
 | redirect | string  | **required**  |  | After payment completed, payer will be redirected to this url (KNET and 3D secure charge request required, Redirect url) |
-| post | object  | **required**  |  | After payment completed, goSell Gateway will post the charge response to the this url |
+| post | string  | **required**  |  | After payment completed, goSell Gateway will post the charge response to the this url |
 
 2. authorize **[Object]**:
 
@@ -154,7 +154,7 @@ Enable authorize mode in goSell payment gateway. The object should includes the 
 | metadata | string  | **optional**  |  | Set of key/value pairs that you can attach to an object. It can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to metadata. |
 | receipt | object  | **optional**  | {<br>email: false,<br>sms: true<br>} | Whether receipt email or sms to be send to the payer or not |
 | redirect | string  | **required**  |  | After payment completed, payer will be redirected to this url (KNET and 3D secure charge request required, Redirect url) |
-| post | object  | **required**  |  | After payment completed, goSell Gateway will post the charge response to the this url |
+| post | string  | **required**  |  | After payment completed, goSell Gateway will post the charge response to the this url |
 
 3. save_card:
 Save credit/debit cards in goSell gateway. There's not configurations for this mode.
