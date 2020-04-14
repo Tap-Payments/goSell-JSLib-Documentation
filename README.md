@@ -32,8 +32,7 @@ goSell Checkout includes two different integrations based on your preferences:
 
 
 ## Demo
-https://jslib.gosell.io/ 
-
+https://jslib.gosell.io/demo/
 
 ## goSell Checkout
 
