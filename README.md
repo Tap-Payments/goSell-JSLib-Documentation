@@ -77,6 +77,7 @@ It's a required field for the JS library. It includes the general settings of th
 | property name | Type  | Status  | Default value	 | Description |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | publicKey | string  | **required**  |  | Your goSell public key. |
+| merchantId | string  | **optional**  |  | Your ID. |
 | language | string  | **optional**  | 'en' | Define the language of payment gateway. The supported languages are 'en' & 'ar'. |
 | contactInfo | boolean  | **optional**  |  true | Show the contact info (phone numbers, social media links .. etc) of the merchant in goSell gateway. |
 | supportedCurrencies | string or array of currencies using ISO code  | **optional**  | 'all' | there's 3 different values for this property:<br><br>  1.'all': which will display  all goSell supported currencies.<br><br> 2.'gcc': the currencies of Gulf Cooperation Council. <br><br> 3. Array of strings: specify a custom list of the following supported currencies by goSell: <br> ["KWD", "BHD", "SAR", "AED", "OMR", "QAR", "EGP", "GBP", "USD", "EUR"] |
@@ -199,6 +200,7 @@ Example with transaction mode 'charge':
       containerID:"root",
       gateway:{
         publicKey:"pk_test_Vlk842B1EA7tDN5QbrfGjYzh",
+        merchantId: null,
         language:"en",
         contactInfo:true,
         supportedCurrencies:"all",
