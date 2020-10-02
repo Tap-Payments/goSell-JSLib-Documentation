@@ -244,7 +244,7 @@ Example with transaction mode 'charge':
         }
       },
       customer:{
-        id:"cus_m1QB0320181401l1LD1812485",
+        id:null,
         first_name: "First Name",
         middle_name: "Middle Name",
         last_name: "Last Name",
