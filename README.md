@@ -61,6 +61,14 @@ import the library inside your code:
 import { GoSell } from "@tap-payments/gosell";
 ```
 
+>  For react package, there's peer dependencies that you have to download it in your project like `react`, `mobx` and `mobx-react`, when you download mobx and mobx-react, please make sure you're using the following versions: 
+
+```
+"mobx": "^4.11.0",
+"mobx-react": "^5.4.4"
+```
+
+
 #### goSell Usage
 
 The **JavaScript Library** allows you to use any HTML element or JavaScript event to trigger Checkout. You will just need basic JavaScript skills to integrate with goSell.
@@ -482,7 +490,7 @@ class GoSellDemo extends Component {
              shipping:null,
              taxes: null
            }}
-           transaction={
+           transaction={{
              mode: 'charge',
              charge:{
               saveCard: false,
@@ -500,7 +508,7 @@ class GoSellDemo extends Component {
               },
               redirect: "REDIRECT_URL",
               post: null,
-            }}
+            }}}
            />
       </div>
     );
