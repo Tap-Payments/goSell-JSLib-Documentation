@@ -104,7 +104,7 @@ It's a required field for the JS library. Includes the customer details, it's re
 
 | property name | Type  | Status  | Default value	 | Description |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| id | string  | **required, if the customer details is not defined**  | null | The id of your customer  |
+| id | string  | **required, if the customer details is not defined**  | null | The id of your customer in tap system  |
 | first_name | string  | **required, if the customer id is not defined**  |  | The first name of your customer  |
 | middle_name | string  | **optional**  |  | The middle name of your customer  |
 | last_name | string  | **optional**  |  | The last name of your customer  |
