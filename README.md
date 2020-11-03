@@ -184,9 +184,9 @@ It's optional field in `goSell.showResult()` which define an action or a callbac
 
 #### goSell Examples
 
-- **Vanilla Javascript Example**:
+- **Vanilla Javascript Examples**:
 
-Example with transaction mode 'charge': 
+1. Example with transaction mode 'charge': 
 
 ```
 <html>
@@ -335,7 +335,7 @@ Example with transaction mode 'charge':
 
 ```
 
-Redirect page defined in charge configurations `redirect.html`: 
+2. Redirect page defined in charge configurations `redirect.html`: 
 
 ```
 <html>
@@ -376,7 +376,7 @@ Redirect page defined in charge configurations `redirect.html`:
 ```
 
 
-Example with `onLoad` callback:
+3. Example with `onLoad` callback:
 
 ```
 
