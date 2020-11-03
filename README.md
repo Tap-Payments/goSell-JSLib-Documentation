@@ -43,7 +43,7 @@ You can integrate with goSell by:
 - JavaScript Library, which allows front end developers to setup the payment gateway on their stores easily by adding a very basic snippet of JavaScript using the following script tag:
 
 ```
-<script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.4.1/js/gosell.js"></script>
+<script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.6.0/js/gosell.js"></script>
 ```
 ** Take care, the configurations structure has been changed in this version **
 >  Use the JavaScript Library in server side environment, otherwise the credit card section will not work.
@@ -95,6 +95,8 @@ It's a required field for the JS library. It includes the general settings of th
 | notifications | string  | **optional**  | 'standard' | Define your preferences, if you like to use your own component or HTML element to show notifications or use goSell standard notifications bar. |
 | backgroundImg | object  | **optional**  |  | Define a background image for the goSell JS library page. |
 | callback | function  | **optional**  |  | Define an action or a callback after each transaction. When the payment process is being executed, the library will return the transaction result JSON to the callback function.    |
+| onClose | function  | **optional**  |  | Define an action or piece of code to be executed on the close event. |
+| onLoad | function  | **optional**  |  | Use this with the `popup` mode only, define an action or piece of code to be executed when the page ready to load on the screen. for example, add this function to call `goSell.openLightBox()`, if you used `goSell.config()` on action event.  |
 | onClose | function  | **optional**  |  | Define an action or piece of code to be executed on the close event. |
 | labels | object  | **optional**  | {<br>cardNumber:"Card Number",<br>expirationDate:"MM/YY",<br>cvv:"CVV",<br>cardHolder:"Name on Card",<br>actionButton:"Pay"<br>} | Define custom titles for input boxes inside credit/debit cards section. |
 | style | object  | **optional**  | {<br>base: {<br>color: '#535353',<br>lineHeight: '18px',<br>fontFamily: 'sans-serif',<br>fontSmoothing: 'antialiased',<br>fontSize: '16px',<br>'::placeholder': {<br>color: 'rgba(0, 0, 0, 0.26)',<br>fontSize:'15px'<br>}<br>},<br>invalid: {<br>color: 'red',<br>iconColor: '#fa755a '<br>}<br>} | Define custom style for input boxes inside credit/debit cards section. |
@@ -192,11 +194,11 @@ Example with transaction mode 'charge':
     <title>goSell Demo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <link rel="shortcut icon" href="https://goSellJSLib.b-cdn.net/v1.4.1/imgs/tap-favicon.ico" />
-    <link href="https://goSellJSLib.b-cdn.net/v1.4.1/css/gosell.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="https://goSellJSLib.b-cdn.net/v1.6.0/imgs/tap-favicon.ico" />
+    <link href="https://goSellJSLib.b-cdn.net/v1.6.0/css/gosell.css" rel="stylesheet" />
 </head>
 <body>
-    <script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.4.1/js/gosell.js"></script>
+    <script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.6.0/js/gosell.js"></script>
 
     <div id="root"></div>
     <button id="openLightBox" onclick="goSell.openLightBox()">open goSell LightBox</button>
@@ -347,10 +349,10 @@ Redirect page defined in charge configurations `redirect.html`:
 
     <link
       rel="shortcut icon"
-      href="https://goSellJSLib.b-cdn.net/v1.4.1/imgs/tap-favicon.ico"
+      href="https://goSellJSLib.b-cdn.net/v1.6.0/imgs/tap-favicon.ico"
     />
     <link
-      href="https://goSellJSLib.b-cdn.net/v1.4.1/css/gosell.css"
+      href="https://goSellJSLib.b-cdn.net/v1.6.0/css/gosell.css"
       rel="stylesheet"
     />
   </head>
@@ -358,7 +360,7 @@ Redirect page defined in charge configurations `redirect.html`:
 
     <script
       type="text/javascript"
-      src="https://goSellJSLib.b-cdn.net/v1.4.1/js/gosell.js"
+      src="https://goSellJSLib.b-cdn.net/v1.6.0/js/gosell.js"
     ></script>
 
     <div id="root"></div>
@@ -371,6 +373,135 @@ Redirect page defined in charge configurations `redirect.html`:
     </script>
   </body>
 </html>
+```
+
+
+Example with `onLoad` callback:
+
+```
+
+<html>
+  <head>
+    <title>goSell Demo</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://goSellJSLib.b-cdn.net/v1.6.0/imgs/tap-favicon.ico"
+    />
+    <link
+      href="https://goSellJSLib.b-cdn.net/v1.6.0/css/gosell.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <script src="https://goSellJSLib.b-cdn.net/v1.6.0/js/gosell.js" type="text/javascript"></script>
+    <div id="root"></div>
+    <input type="number" id="amount" name="amount" value="1"/>
+    <button id="checkoutBtn" onclick="save()">
+      Checkouts
+    </button>
+    <script>
+      function save(){
+        const button = document.getElementById('checkoutBtn');
+        button.disabled = true;
+        goSell.config({
+          gateway: {
+            publicKey: "pk_test_Vlk842B1EA7tDN5QbrfGjYzh",
+            merchant_id: "1124340",
+            merchant_id: null,
+            language: "en",
+            contactInfo: false,
+            supportedCurrencies: "all",
+            supportedPaymentMethods: "all",
+            saveCardOption: true,
+            customerCards: true,
+            notifications: "standard",
+            callback: (response) => {
+              console.log("callback", response);
+            },
+            onClose: () => {
+              console.log("onclose hey");
+            },
+            onLoad:() => {
+              console.log("onLoad");
+              goSell.openLightBox();
+            },
+            style: {
+              base: {
+                color: "red",
+                lineHeight: "10px",
+                fontFamily: "sans-serif",
+                fontSmoothing: "antialiased",
+                fontSize: "10px",
+                "::placeholder": {
+                  color: "rgba(0, 0, 0, 0.26)",
+                  fontSize: "10px",
+                },
+              },
+              invalid: {
+                color: "red",
+                iconColor: "#fa755a ",
+              },
+            },
+          },
+          customer: {
+            first_name: "hala",
+            middle_name: "",
+            last_name: "",
+            email: "test@test.com",
+            phone: {
+              country_code: "+965",
+              number: "00000000",
+            },
+          },
+          order: {
+            amount: document.getElementById('amount').value,
+            currency: "KWD",
+            items: [{
+                "id":0,
+                "name":"Item ",
+                "description":"Item Desc 0",
+                "old_quantity":1,
+                "quantity":1,
+                "amount_per_unit":0,
+                "old_total_amount":0,
+                "total_amount":10
+            }],
+          },
+          transaction: {
+            mode: "charge",
+            charge: {
+              auto: {
+                time: 100,
+                type: "VOID",
+              },
+              saveCard: false,
+              threeDSecure: true,
+              description: "description",
+              statement_descriptor: "statement_descriptor",
+              reference: {
+                transaction: "txn_0001",
+                order: "ord_0001",
+              },
+              metadata: {},
+              receipt: {
+                email: false,
+                sms: true,
+              },
+              redirect: "http://localhost/redirect.html",
+              post: null,
+            }
+          },
+        });
+      }
+    </script>
+  </body>
+</html>
+
 ```
 
 
@@ -529,7 +660,7 @@ You can integrate with goSellElements by:
 - JavaScript Library, which allows front end developers to setup the payment gateway on their stores easily by adding a very basic snippet of JavaScript using the following script tag:
 
 ```
-<script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.4.1/js/gosell.js"></script>
+<script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.6.0/js/gosell.js"></script>
 ```
 
 >  Use the goSellElements in server side environment, otherwise the credit card section will not work.
@@ -585,11 +716,11 @@ Used to generate card token.
       <title>goSell Elements Demo</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-      <link rel="shortcut icon" href="https://goSellJSLib.b-cdn.net/v1.4.1/imgs/tap-favicon.ico" />
-      <link href="https://goSellJSLib.b-cdn.net/v1.4.1/css/gosell.css" rel="stylesheet" />
+      <link rel="shortcut icon" href="https://goSellJSLib.b-cdn.net/v1.6.0/imgs/tap-favicon.ico" />
+      <link href="https://goSellJSLib.b-cdn.net/v1.6.0/css/gosell.css" rel="stylesheet" />
    </head>
    <body>
-      <script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.4.1/js/gosell.js"></script>
+      <script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.6.0/js/gosell.js"></script>
       <div id="root"></div>
       <p id="msg"></p>
       <button id="submit-elements" onclick="goSell.submit()">Submit</button>
