@@ -43,7 +43,7 @@ You can integrate with goSell by:
 - JavaScript Library, which allows front end developers to setup the payment gateway on their stores easily by adding a very basic snippet of JavaScript using the following script tag:
 
 ```
-<script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.6.0/js/gosell.js"></script>
+<script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.6.1/js/gosell.js"></script>
 ```
 ** Take care, the configurations structure has been changed in this version **
 >  Use the JavaScript Library in server side environment, otherwise the credit card section will not work.
@@ -195,11 +195,11 @@ It's optional field in `goSell.showResult()` which define an action or a callbac
     <title>goSell Demo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <link rel="shortcut icon" href="https://goSellJSLib.b-cdn.net/v1.6.0/imgs/tap-favicon.ico" />
-    <link href="https://goSellJSLib.b-cdn.net/v1.6.0/css/gosell.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="https://goSellJSLib.b-cdn.net/v1.6.1/imgs/tap-favicon.ico" />
+    <link href="https://goSellJSLib.b-cdn.net/v1.6.1/css/gosell.css" rel="stylesheet" />
 </head>
 <body>
-    <script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.6.0/js/gosell.js"></script>
+    <script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.6.1/js/gosell.js"></script>
 
     <div id="root"></div>
     <button id="openLightBox" onclick="goSell.openLightBox()">open goSell LightBox</button>
@@ -350,10 +350,10 @@ It's optional field in `goSell.showResult()` which define an action or a callbac
 
     <link
       rel="shortcut icon"
-      href="https://goSellJSLib.b-cdn.net/v1.6.0/imgs/tap-favicon.ico"
+      href="https://goSellJSLib.b-cdn.net/v1.6.1/imgs/tap-favicon.ico"
     />
     <link
-      href="https://goSellJSLib.b-cdn.net/v1.6.0/css/gosell.css"
+      href="https://goSellJSLib.b-cdn.net/v1.6.1/css/gosell.css"
       rel="stylesheet"
     />
   </head>
@@ -361,7 +361,7 @@ It's optional field in `goSell.showResult()` which define an action or a callbac
 
     <script
       type="text/javascript"
-      src="https://goSellJSLib.b-cdn.net/v1.6.0/js/gosell.js"
+      src="https://goSellJSLib.b-cdn.net/v1.6.1/js/gosell.js"
     ></script>
 
     <div id="root"></div>
@@ -391,15 +391,15 @@ It's optional field in `goSell.showResult()` which define an action or a callbac
     />
     <link
       rel="shortcut icon"
-      href="https://goSellJSLib.b-cdn.net/v1.6.0/imgs/tap-favicon.ico"
+      href="https://goSellJSLib.b-cdn.net/v1.6.1/imgs/tap-favicon.ico"
     />
     <link
-      href="https://goSellJSLib.b-cdn.net/v1.6.0/css/gosell.css"
+      href="https://goSellJSLib.b-cdn.net/v1.6.1/css/gosell.css"
       rel="stylesheet"
     />
   </head>
   <body>
-    <script src="https://goSellJSLib.b-cdn.net/v1.6.0/js/gosell.js" type="text/javascript"></script>
+    <script src="https://goSellJSLib.b-cdn.net/v1.6.1/js/gosell.js" type="text/javascript"></script>
     <div id="root"></div>
     <input type="number" id="amount" name="amount" value="1"/>
     <button id="checkoutBtn" onclick="save()">
@@ -661,7 +661,7 @@ You can integrate with goSellElements by:
 - JavaScript Library, which allows front end developers to setup the payment gateway on their stores easily by adding a very basic snippet of JavaScript using the following script tag:
 
 ```
-<script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.6.0/js/gosell.js"></script>
+<script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.6.1/js/gosell.js"></script>
 ```
 
 >  Use the goSellElements in server side environment, otherwise the credit card section will not work.
@@ -717,11 +717,11 @@ Used to generate card token.
       <title>goSell Elements Demo</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-      <link rel="shortcut icon" href="https://goSellJSLib.b-cdn.net/v1.6.0/imgs/tap-favicon.ico" />
-      <link href="https://goSellJSLib.b-cdn.net/v1.6.0/css/gosell.css" rel="stylesheet" />
+      <link rel="shortcut icon" href="https://goSellJSLib.b-cdn.net/v1.6.1/imgs/tap-favicon.ico" />
+      <link href="https://goSellJSLib.b-cdn.net/v1.6.1/css/gosell.css" rel="stylesheet" />
    </head>
    <body>
-      <script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.6.0/js/gosell.js"></script>
+      <script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.6.1/js/gosell.js"></script>
       <div id="root"></div>
       <p id="msg"></p>
       <button id="submit-elements" onclick="goSell.submit()">Submit</button>
@@ -837,4 +837,5 @@ export default GoSellElementsDemo;
 
 ## Author
 
-* [Hala Q.](https://www.npmjs.com/~hala.q)
+* Hala Q. [GitHub](https://github.com/halaq)
+* Hala Q.[NPM](https://www.npmjs.com/~hala.q)
