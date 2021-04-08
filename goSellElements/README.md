@@ -64,11 +64,11 @@ Used to generate card token.
 
 ## Vanilla JS Samples:
 
-- [Sample 1](/samples/js/index.html)
+- [Sample 1](samples/js/index.html)
 
 ## React JS Samples:
 
-- [Sample 2](/samples/react/index.js)
+- [Sample 2](samples/react/index.js)
 
 ## Author
 
