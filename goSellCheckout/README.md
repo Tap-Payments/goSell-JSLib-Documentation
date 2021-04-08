@@ -166,12 +166,12 @@ It's optional field in `goSell.showResult()` which define an action or a callbac
 
 #### Vanilla JS:
 
-- [Sample 1 - Integration for popup and page modes](/samples/js/sample1)
-- [Sample 2 - Integration with popup mode using onLoad](/samples/js/sample2)
+- [Sample 1 - Integration for popup and page modes](samples/js/sample1)
+- [Sample 2 - Integration with popup mode using onLoad](samples/js/sample2)
 
 #### React JS:
 
-- [Sample 3 - Integration for popup and page modes](/samples/react/sample3)
+- [Sample 3 - Integration for popup and page modes](samples/react/sample3)
 
 ## Author
 
