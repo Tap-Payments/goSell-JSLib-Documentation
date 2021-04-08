@@ -162,12 +162,14 @@ Used to generate card token. There's not configurations for this mode.
 It's optional field in `goSell.showResult()` which define an action or a callback after showing the transaction result in redirect page. It will return the transaction result in a JSON.
 
 
-## Vanilla JS Samples:
+## Samples
+
+#### Vanilla JS:
 
 - [Sample 1 - Integration for popup and page modes](/samples/js/sample1)
 - [Sample 2 - Integration with popup mode using onLoad](/samples/js/sample2)
 
-## React JS Samples:
+#### React JS:
 
 - [Sample 3 - Integration for popup and page modes](/samples/react/sample3)
 
