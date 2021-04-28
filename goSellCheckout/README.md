@@ -146,7 +146,7 @@ Enable authorize mode in goSell payment gateway. The object should includes the 
 | receipt | object  | **optional**  | {<br>email: false,<br>sms: true<br>} | Whether receipt email or sms to be send to the payer or not |
 | redirect | string  | **required**  |  | After payment completed, payer will be redirected to this url (KNET and 3D secure charge request required, Redirect url) |
 | post | string  | **required**  |  | After payment completed, goSell Gateway will post the charge response to the this url |
-| hashstring | string  | **required**  |  | A fixed-length string that match Tap [post url header](post/). |
+| hashstring | string  | **required**  |  | A fixed-length string that match Tap [post url header](post/README.md). |
 
 #### save_card:
 Save credit/debit cards in goSell gateway. There's not configurations for this mode.
