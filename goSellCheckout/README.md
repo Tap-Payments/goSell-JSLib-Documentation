@@ -9,11 +9,11 @@
 ## Installation
 
 You can integrate with goSell by:
-
+s
 - JavaScript Library, which allows front end developers to setup the payment gateway on their stores easily by adding a very basic snippet of JavaScript using the following script tag:
 
 ```
-<script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.6.1/js/gosell.js"></script>
+<script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.6.0/js/gosell.js"></script>
 ```
 ** Take care, the configurations structure has been changed in this version **
 >  Use the JavaScript Library in server side environment, otherwise the credit card section will not work.
