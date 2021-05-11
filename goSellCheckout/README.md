@@ -126,7 +126,7 @@ Enable charge mode in goSell payment gateway. The charge transactions will be cr
 | receipt | object  | **optional**  | {<br>email: false,<br>sms: true<br>} | Whether receipt email or sms to be send to the payer or not |
 | redirect | string  | **required**  |  | After payment completed, payer will be redirected to this url (KNET and 3D secure charge request required, Redirect url) |
 | post | string  | **required**  |  | After payment completed, goSell Gateway will post the charge response to the this url |
-| hashstring | string  | **required**  |  | A fixed-length string that match Tap [post url header](/post/README.md). |
+| hashstring | string  | **required**  |  | A fixed-length string that match Tap [post url header]( ./post ). |
 
 
 
@@ -146,7 +146,7 @@ Enable authorize mode in goSell payment gateway. The object should includes the 
 | receipt | object  | **optional**  | {<br>email: false,<br>sms: true<br>} | Whether receipt email or sms to be send to the payer or not |
 | redirect | string  | **required**  |  | After payment completed, payer will be redirected to this url (KNET and 3D secure charge request required, Redirect url) |
 | post | string  | **required**  |  | After payment completed, goSell Gateway will post the charge response to the this url |
-| hashstring | string  | **required**  |  | A fixed-length string that match Tap [post url header](/post/README.md). |
+| hashstring | string  | **required**  |  | A fixed-length string that match Tap [post url header](post/README.md). |
 
 #### save_card:
 Save credit/debit cards in goSell gateway. There's not configurations for this mode.
@@ -162,14 +162,16 @@ Used to generate card token. There's not configurations for this mode.
 It's optional field in `goSell.showResult()` which define an action or a callback after showing the transaction result in redirect page. It will return the transaction result in a JSON.
 
 
-## Vanilla JS Samples:
+## Samples
 
-- [Sample 1 - Integration for popup and page modes](/samples/js/sample1)
-- [Sample 2 - Integration with popup mode using onLoad](/samples/js/sample2)
+#### Vanilla JS:
 
-## React JS Samples:
+- [Sample 1 - Integration for popup and page modes](samples/js/sample1)
+- [Sample 2 - Integration with popup mode using onLoad](samples/js/sample2)
 
-- [Sample 3 - Integration for popup and page modes](/samples/react/sample3)
+#### React JS:
+
+- [Sample 3 - Integration for popup and page modes](samples/react/sample3)
 
 ## Author
 
