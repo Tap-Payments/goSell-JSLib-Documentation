@@ -111,7 +111,7 @@ goSell.config({
         transaction: "txn_0001",
         order: "ord_0001",
       },
-      hashstring:null,
+      hashstring:"",
       metadata: {},
       receipt: {
         email: false,
