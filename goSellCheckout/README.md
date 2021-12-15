@@ -91,9 +91,44 @@ It's a required field for the JS library. Includes the order details, it's requi
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | amount | string  | **required**  |  | The total amount of the order. |
 | currency | string  | **required**  |  | The ISO currency code of the total amount. |
-| items | string  | **optional**  | null | Items details. |
-| shipping | string  | **optional**  | null | Shipping details. |
-| taxes | object  | **optional**  | null | taxes detail. |
+| items | Array  | **optional**  | null | Items details in the following format:<br>
+ [<br>
+      {<br>
+        "amount": 10,<br>
+        "currency": "KWD",<br>
+        "description": "test",<br>
+        "discount": {<br>
+          "type": "P",<br>
+          "value": 0<br>
+        },<br>
+        "image": "",<br>
+        "name": "test",<br>
+        "quantity": 1<br>
+      }<br>
+    ]<br>
+|
+| shipping | Object  | **optional**  | null | Shipping details in the following fomrat: <br>
+{<br>
+      "amount": 1,<br>
+      "currency": "KWD",<br>
+      "description": "test",<br>
+      "provider": "ARAMEX",<br>
+      "service": "test"<br>
+    }
+    
+|
+| taxes | Array  | **optional**  | null | taxes details in the following fomrat: <br>
+[<br>
+      {<br>
+        "description": "test",<br>
+        "name": "VAT",<br>
+        "rate": {<br>
+          "type": "F",<br>
+          "value": 1<br>
+        }<br>
+      }<br>
+    ]<br>
+ |
 
 
 #### transaction **[object]**:
