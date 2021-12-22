@@ -515,22 +515,16 @@ export default GoSellDemo;
 Redirect page defined in charge configurations `redirect.js`:
 
 ```
-import React, { Component }  from "react";
+import React, { Component } from "react";
 import { GoSell } from "@tap-payments/gosell";
 
 class Redirect extends Component {
-
   componentDidMount() {
-    var URLSearchParams = require("@ungap/url-search-params/cjs");
-    var urlParams = new URLSearchParams(window.location.search);
-
-    if (urlParams.has("tap_id") && urlParams.has("token")) {
-      GoSell.showResult({
-        callback: (response) => {
-          console.log("callback", response);
-        },
-      });
-    }
+    GoSell.showResult({
+      callback: (response) => {
+        console.log("callback", response);
+      },
+    });
   }
 
   render() {

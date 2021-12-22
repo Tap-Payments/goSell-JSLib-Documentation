@@ -130,7 +130,7 @@ class GoSellDemo extends Component {
                 email: false,
                 sms: true,
               },
-              redirect: "REDIRECT_URL",
+              redirect: "/redirect",
               post: null,
             },
           }}
